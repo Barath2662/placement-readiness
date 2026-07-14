@@ -8,6 +8,7 @@ import {
 } from '@/lib/data'
 import Heatmap from '@/components/Heatmap'
 import MarkdownRenderer from '@/components/MarkdownRenderer'
+import Avatar from '@/components/Avatar'
 
 interface Props {
   params: Promise<{ rollnumber: string }>
@@ -55,39 +56,39 @@ export default async function StudentProfilePage({ params }: Props) {
   return (
     <div className="space-y-8 animate-fade-in">
       {/* Breadcrumb */}
-      <div className="text-sm text-gray-500">
-        <Link href="/leaderboard" className="hover:text-gray-300 transition-colors">Leaderboard</Link>
+      <div className="text-sm text-slate-500">
+        <Link href="/leaderboard" className="hover:text-slate-300 transition-colors">Leaderboard</Link>
         <span className="mx-2">›</span>
-        <span className="text-gray-300">{student.name}</span>
+        <span className="text-slate-300">{student.name}</span>
       </div>
 
       {/* Header card */}
       <div className="card">
         <div className="flex flex-col sm:flex-row sm:items-center gap-4">
-          {/* Avatar placeholder */}
-          <div className="w-16 h-16 rounded-full bg-gradient-to-br from-brand-600 to-emerald-700 flex items-center justify-center text-2xl font-bold text-white flex-shrink-0">
-            {student.name.charAt(0)}
+          {/* Avatar */}
+          <div className="flex-shrink-0">
+            <Avatar seed={rollnumber} size={64} />
           </div>
           <div className="flex-1">
             <h1 className="text-2xl font-bold text-white">{student.name}</h1>
             <div className="flex flex-wrap gap-2 mt-1">
-              <span className="font-mono text-sm text-gray-400">{rollnumber}</span>
-              <span className="text-gray-600">·</span>
+              <span className="font-mono text-sm text-slate-400">{rollnumber}</span>
+              <span className="text-slate-600">·</span>
               <Link href={`/teams/${student.team}`} className="text-sm text-brand-400 hover:text-brand-300 transition-colors capitalize">
                 {student.team}
               </Link>
               {team && (
                 <>
-                  <span className="text-gray-600">·</span>
-                  <span className="text-sm text-gray-400">Lab {team.lab}</span>
+                  <span className="text-slate-600">·</span>
+                  <span className="text-sm text-slate-400">Lab {team.lab}</span>
                 </>
               )}
-              <span className="text-gray-600">·</span>
+              <span className="text-slate-600">·</span>
               <a
                 href={`https://github.com/${student.github}`}
                 target="_blank"
                 rel="noreferrer"
-                className="text-sm text-gray-400 hover:text-white transition-colors"
+                className="text-sm text-slate-400 hover:text-white transition-colors"
               >
                 @{student.github}
               </a>
@@ -95,7 +96,7 @@ export default async function StudentProfilePage({ params }: Props) {
           </div>
           <div className="text-right flex-shrink-0">
             <div className="text-4xl font-bold text-white tabular-nums">{score?.total ?? 0}</div>
-            <div className="text-xs text-gray-500">total points</div>
+            <div className="text-xs text-slate-500">total points</div>
             <div className={`text-sm mt-1 ${presentCount / Math.max(daysRun.length, 1) >= 0.8 ? 'text-brand-400' : 'text-yellow-400'}`}>
               {presentCount}/{daysRun.length} days present
             </div>
@@ -153,10 +154,10 @@ export default async function StudentProfilePage({ params }: Props) {
                           { label: 'Docs', value: dayScore.documentation, max: 5 },
                         ].map(({ label, value, max }) => (
                           <div key={label} className="flex flex-col items-center gap-1">
-                            <span className="text-gray-500">{label}</span>
+                            <span className="text-slate-500">{label}</span>
                             <div className="font-bold text-white tabular-nums">
                               {value}
-                              <span className="text-gray-600 font-normal">/{max}</span>
+                              <span className="text-slate-600 font-normal">/{max}</span>
                             </div>
                           </div>
                         ))}
@@ -213,7 +214,7 @@ export default async function StudentProfilePage({ params }: Props) {
             <div className="card">
               <div className="flex items-center justify-between mb-3">
                 <h3 className="font-semibold text-white text-sm flex items-center gap-2">
-                  <span className="w-5 h-5 rounded bg-purple-600/20 flex items-center justify-center text-purple-400 text-xs">P</span>
+                  <span className="w-5 h-5 rounded bg-slate-800 flex items-center justify-center text-slate-300 text-xs border border-slate-700">P</span>
                   Prompts Log
                 </h3>
               </div>

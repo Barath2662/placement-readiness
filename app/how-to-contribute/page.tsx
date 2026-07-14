@@ -88,7 +88,7 @@ export default async function HowToContributePage() {
           </div>
         ) : (
           <div className="card">
-            <div className="prose-fallback space-y-6 text-gray-300">
+            <div className="prose-fallback space-y-6 text-slate-300">
               <p className="text-yellow-400 text-sm">
                 (Could not load the live guide from GitHub — showing the built-in version)
               </p>
@@ -102,18 +102,18 @@ export default async function HowToContributePage() {
               </p>
 
               <h2 className="text-xl font-bold text-white">Step 2: Clone your fork</h2>
-              <pre className="bg-slate-800 rounded-lg p-4 overflow-x-auto text-sm font-mono text-slate-200">
+              <pre className="bg-[#050505] border border-slate-800 rounded-lg p-4 overflow-x-auto text-sm font-mono text-slate-200">
                 {`git clone https://github.com/<your-username>/placement-readiness.git\ncd placement-readiness`}
               </pre>
-              <p>Replace <code className="font-mono bg-slate-800 px-1 rounded">&lt;your-username&gt;</code> with your actual GitHub username.</p>
+              <p>Replace <code className="font-mono bg-[#050505] border border-slate-800 px-1 rounded">&lt;your-username&gt;</code> with your actual GitHub username.</p>
 
               <h2 className="text-xl font-bold text-white">Step 3: Create your files</h2>
-              <p>For Day 1, create: <code className="font-mono bg-gray-800 px-1 rounded">students/25mxXXX/profile.md</code> (your roll number).</p>
-              <p>For Day 2+, create files in: <code className="font-mono bg-gray-800 px-1 rounded">activities/dayXX/25mxXXX/</code></p>
-              <p>Copy the template files from <code className="font-mono bg-gray-800 px-1 rounded">activities/dayXX/_template/</code> as a starting point.</p>
+              <p>For Day 1, create: <code className="font-mono bg-[#050505] border border-slate-800 px-1 rounded">students/25mxXXX/profile.md</code> (your roll number).</p>
+              <p>For Day 2+, create files in: <code className="font-mono bg-[#050505] border border-slate-800 px-1 rounded">activities/dayXX/25mxXXX/</code></p>
+              <p>Copy the template files from <code className="font-mono bg-[#050505] border border-slate-800 px-1 rounded">activities/dayXX/_template/</code> as a starting point.</p>
 
               <h2 className="text-xl font-bold text-white">Step 4: Commit and push</h2>
-              <pre className="bg-gray-800 rounded-lg p-4 overflow-x-auto text-sm font-mono text-gray-200">
+              <pre className="bg-[#050505] border border-slate-800 rounded-lg p-4 overflow-x-auto text-sm font-mono text-slate-200">
                 {`git add .\ngit commit -m "2026-07-11: 25mx301 submission"\ngit push origin main`}
               </pre>
 

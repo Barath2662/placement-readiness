@@ -29,18 +29,18 @@ export default function TeamCard({ team, rank }: TeamCardProps) {
               <h3 className="font-bold text-white group-hover:text-brand-400 transition-colors">
                 {team.name}
               </h3>
-              <p className="text-xs text-gray-500">Lab {team.lab} · {team.memberCount} members</p>
+              <p className="text-xs text-slate-500">Lab {team.lab} · {team.memberCount} members</p>
             </div>
           </div>
           <div className="text-right">
             <div className="text-2xl font-bold text-white tabular-nums">{team.averageScore}</div>
-            <div className="text-xs text-gray-500">avg score</div>
+            <div className="text-xs text-slate-500">avg score</div>
           </div>
         </div>
 
         {/* Attendance bar */}
         <div className="mb-3">
-          <div className="flex justify-between text-xs text-gray-500 mb-1">
+          <div className="flex justify-between text-xs text-slate-500 mb-1">
             <span>Attendance</span>
             <span className={team.attendanceRate >= 80 ? 'text-brand-400' : team.attendanceRate >= 50 ? 'text-yellow-400' : 'text-red-400'}>
               {team.attendanceRate}%
@@ -60,13 +60,13 @@ export default function TeamCard({ team, rank }: TeamCardProps) {
             <span
               key={m.roll}
               title={m.name}
-              className="text-xs font-mono bg-gray-800 text-gray-400 px-1.5 py-0.5 rounded border border-gray-700"
+              className="text-xs font-mono bg-[#050505] text-slate-400 px-1.5 py-0.5 rounded border border-slate-700"
             >
               {m.roll}
             </span>
           ))}
           {team.members.length > 6 && (
-            <span className="text-xs text-gray-600">+{team.members.length - 6} more</span>
+            <span className="text-xs text-slate-500">+{team.members.length - 6} more</span>
           )}
         </div>
 

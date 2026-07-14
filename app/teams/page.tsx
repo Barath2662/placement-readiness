@@ -32,23 +32,23 @@ export default async function TeamsPage() {
 
       {/* Overall team stats */}
       <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
-        <div className="stat-card p-6 glass hover:-translate-y-1 transition-transform lg:col-span-1">
+        <div className="stat-card p-6 glass hover:-translate-y-1 transition-transform lg:col-span-1 border border-brand-500/20 shadow-[0_0_15px_rgba(245,158,11,0.05)]">
           <div className="stat-label mb-2 opacity-80">Top Team</div>
           <div className="stat-value text-3xl text-brand-400">{teamSummaries[0]?.name ?? '—'}</div>
           <div className="stat-sub mt-2 opacity-60">{teamSummaries[0]?.averageScore ?? 0} avg pts</div>
         </div>
-        <div className="stat-card p-6 glass hover:-translate-y-1 transition-transform">
+        <div className="stat-card p-6 glass hover:-translate-y-1 transition-transform border border-brand-500/20 shadow-[0_0_15px_rgba(245,158,11,0.05)]">
           <div className="stat-label mb-2 opacity-80">Best Attendance</div>
-          <div className="stat-value text-3xl text-purple-300">
+          <div className="stat-value text-3xl text-yellow-400">
             {[...teamSummaries].sort((a, b) => b.attendanceRate - a.attendanceRate)[0]?.name ?? '—'}
           </div>
           <div className="stat-sub mt-2 opacity-60">
             {[...teamSummaries].sort((a, b) => b.attendanceRate - a.attendanceRate)[0]?.attendanceRate ?? 0}%
           </div>
         </div>
-        <div className="stat-card p-6 glass hover:-translate-y-1 transition-transform col-span-2 lg:col-span-1">
+        <div className="stat-card p-6 glass hover:-translate-y-1 transition-transform col-span-2 lg:col-span-1 border border-brand-500/20 shadow-[0_0_15px_rgba(245,158,11,0.05)]">
           <div className="stat-label mb-2 opacity-80">Average Team Score</div>
-          <div className="stat-value text-3xl text-pink-300">
+          <div className="stat-value text-3xl text-brand-500">
             {teamSummaries.length > 0
               ? Math.round(teamSummaries.reduce((s, t) => s + (Number(t.averageScore) || 0), 0) / teamSummaries.length) || 0
               : 0}
@@ -60,8 +60,8 @@ export default async function TeamsPage() {
       {/* Lab A */}
       {labA.length > 0 && (
         <div>
-          <h2 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
-            <span className="px-2 py-0.5 bg-blue-500/15 text-blue-400 rounded text-sm font-bold border border-blue-500/25">
+          <h2 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+            <span className="px-3 py-1 bg-slate-800/80 text-slate-300 rounded text-xs font-bold border border-slate-700 uppercase tracking-widest">
               Lab A
             </span>
           </h2>
@@ -76,8 +76,8 @@ export default async function TeamsPage() {
       {/* Lab B */}
       {labB.length > 0 && (
         <div>
-          <h2 className="text-lg font-bold text-white mb-3 flex items-center gap-2">
-            <span className="px-2 py-0.5 bg-purple-500/15 text-purple-400 rounded text-sm font-bold border border-purple-500/25">
+          <h2 className="text-lg font-bold text-white mb-4 flex items-center gap-2">
+            <span className="px-3 py-1 bg-slate-800/80 text-slate-300 rounded text-xs font-bold border border-slate-700 uppercase tracking-widest">
               Lab B
             </span>
           </h2>

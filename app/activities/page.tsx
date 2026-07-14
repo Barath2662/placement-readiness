@@ -54,9 +54,9 @@ export default async function ActivitiesPage() {
               <Link key={day.id} href={`/activities/${day.id}`}>
                 <div className="card-hover flex flex-col sm:flex-row sm:items-center gap-4">
                   {/* Date badge */}
-                  <div className="flex-shrink-0 w-16 h-16 rounded-2xl bg-gradient-to-br from-brand-500/20 to-purple-500/20 border border-brand-500/30 flex items-center justify-center text-center backdrop-blur-sm shadow-inner shadow-brand-500/10">
+                  <div className="flex-shrink-0 w-16 h-16 rounded-2xl bg-[#050505] border border-slate-800 flex items-center justify-center text-center shadow-inner shadow-brand-500/5 group-hover:border-brand-500/30 transition-colors">
                     <div>
-                      <div className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-r from-brand-300 to-purple-300 leading-none">
+                      <div className="text-2xl font-black text-transparent bg-clip-text bg-gradient-to-br from-brand-400 to-yellow-600 leading-none">
                         {new Date(day.id).getDate()}
                       </div>
                       <div className="text-[10px] font-bold text-brand-400 mt-1 uppercase tracking-widest">

@@ -148,7 +148,7 @@ export default async function ActivityDetailPage({ params }: Props) {
           <h2 className="font-bold text-white mb-3 text-sm">Today&apos;s Tasks</h2>
           <ol className="space-y-2">
             {theme.tasks.map((task, i) => (
-              <li key={i} className="flex items-start gap-3 text-sm text-gray-300">
+              <li key={i} className="flex items-start gap-3 text-sm text-slate-300">
                 <span className="flex-shrink-0 w-5 h-5 rounded-full bg-brand-600/20 border border-brand-500/30 flex items-center justify-center text-xs text-brand-400 font-bold mt-0.5">
                   {i + 1}
                 </span>
